@@ -1,18 +1,15 @@
 package me.sudiptakarmakar.pigifylatin;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -65,7 +62,8 @@ public class MainActivity extends ActionBarActivity {
         buttonCopyPig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView textViewPigOutput = (TextView) findViewById(R.id.textViewPigOutput);
+                TextView textViewPigOutput;
+                textViewPigOutput = (TextView) findViewById(R.id.textViewPigOutput);
                 String pigText = String.valueOf(textViewPigOutput.getText());
                 if(pigText.length() > 0) {
                     android.content.ClipboardManager clipboard =
